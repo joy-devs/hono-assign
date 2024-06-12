@@ -1,0 +1,158 @@
+GET http://localhost:8000/
+###
+
+GET http://localhost:8000/api/users
+###
+
+GET http://localhost:8000/api/users/2
+
+//list states
+###
+GET http://localhost:8000/api/state
+
+###
+POST http://localhost:8000/api/state
+Content-Type: application/json
+
+{
+     "id": 4,
+    "name": "CapeTown",
+    "code": 349,
+    "country": "SouthAfrica"
+}
+
+###
+//List Cities
+GET http://localhost:8000/api/cities
+###
+
+POST http://localhost:8000/api/cities
+Content-Type: application/json
+
+{
+ "id": 11,
+    "name": "New York",
+    "zipcode": 667,
+    "address": "10900",
+    "state_id": 1,
+    "country": "US"   
+}
+###
+
+PUT http://localhost:8000/api/cities/6
+Content-Type: application/json
+
+{
+    "id": 6,
+    "name": "Kigali",
+    "zipcode": 223,
+    "address": "10333",
+    "state_id": 2,
+    "country": "Rwanda"
+}
+###
+
+//list addresses
+GET http://localhost:8000/api/addresses
+###
+
+POST http://localhost:8000/api/addresses
+Content-Type: application/json
+
+{
+    "street_address": "kenol",
+    "city_id": 5,
+    "postal_code": 590,
+    "updated_at": "2024-05-06T00:00:00.000Z",
+    "created_at": "2024-05-06T00:00:00.000Z"  
+ }
+
+###
+GET http://localhost:8000/api/restaurants
+###
+
+# POST http://localhost:8000/api/restaurants
+# Content-Type: application/json
+
+
+###
+GET http://localhost:8000/api/owners
+###
+//creating an owner
+POST http://localhost:8000/api/owners
+Content-Type: application/json
+
+{
+    "id":6,
+    "restaurant_id":2 ,
+    "owner_id":1
+}
+###
+DELETE http://localhost:8000/api/owners/6
+
+###
+//list categories
+
+GET http://localhost:8000/api/categories
+###
+
+
+POST http://localhost:8000/api/categories
+Content-Type: application/json
+
+{
+  
+    "id": 7,
+    "name": "meat"
+      
+}
+###
+DELETE http://localhost:8000/api/categories/7
+
+###
+GET http://localhost:8000/api/menuitems
+###
+POST http://localhost:8000/api/menuitems
+Content-Type: application/json
+
+{
+  "id": 1,
+    "restaurant_id": 2,
+    "category_id": 3,
+    "name": "juice",
+    "ingredients": "mango",
+    "price": 200,
+     
+}
+
+###
+GET http://localhost:8000/api/orderstatuses
+###
+POST http://localhost:8000/api/orderstatuses
+Content-Type: application/json
+
+ {
+    "id": 7,
+    "status": "arrival"
+ }
+###
+
+DELETE http://localhost:8000/api/orderstatuses/7
+
+###
+GET http://localhost:8000/api/orders
+
+###
+GET http://localhost:8000/api/ordermenuitems
+###
+GET http://localhost:8000/api/comments
+###
+GET http://localhost:8000/api/statuscatalogs
+###
+GET http://localhost:8000/api/orderstatusrelations
+
+
+
+
+
+
