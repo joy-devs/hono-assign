@@ -30,11 +30,25 @@ app.get("/", (c) => {
     <html> 
     <head>
     <title>Restaurant API</title>
+    <style>
+   body{
+    font-size:2opx;
+    font-family:sans serif;
+    text-align:center;
+    border:1px solid blue; 
+    border-radius:10px;
+     }
+    h1{
+
+    }
+    </style>
     </head>
 
     <body>
-    <h1>Welcome to Quick Eats Restaurant BY Joyce</h1>
+    <h1>Welcome to Garden Delight Restaurant BY Joyce 🍽️</h1>
     <p>We offer delicious meals<p>
+    <p>The taste that make you feel awesome👌</p>
+    <h3>It's not just food it's an experience😊</p>
     </body>
     </html>
    `);
