@@ -53,10 +53,10 @@ app.get("/", (c) => {
 
     <body>
     <div class="container">
-    <h1>Welcome to Garden Delight Restaurant BY Joyce 🍽️</h1>
-    <p>We offer delicious meals<p>
-    <p>The taste that makes you feel awesome👌</p>
-    <h3>It's not just food it's an experience😊</p>
+    <h1>Welcome to Garden Delight Restaurant API BY Joyce </h1>
+    <p> Here you are able to retrieve information about restaurants menu_items and orders processing and shipping of the orders<p>
+    <p>This is the restaurant Managhement System</p>
+    <h3></h3>
     </div>
     </body>
     </html>
