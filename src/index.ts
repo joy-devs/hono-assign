@@ -46,7 +46,7 @@ app.get("/", (c) => {
     }
     .container{
     border-radius:10px;
-    margin-top:50px;
+    margin-top:20px;
     min-width:100px;
     text-align:center;
     height:200px;
@@ -60,7 +60,7 @@ app.get("/", (c) => {
     <body>
     <div class="container">
     <h1>Welcome to Garden Delight Restaurant API BY Joyce </h1>
-    <p>This is the restaurant Managhement System</p>
+    <p>This is the restaurant Management System API</p>
     <p> Here you are able to retrieve information about restaurants menu_items and orders processing and shipping of the orders<p>
     
     <h3></h3>
