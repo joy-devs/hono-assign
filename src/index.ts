@@ -33,7 +33,7 @@ app.get("/", (c) => {
     <style>
    body{
     font-size:2opx;
-    font-family:cursive;
+    font-family:sans-serif;
     align-items:center; 
     display:flex;
     justify-content:center;
@@ -46,10 +46,10 @@ app.get("/", (c) => {
     }
     .container{
     border-radius:10px;
-    margin-top:200px;
-    width:500px;
+    margin-top:50px;
+    min-width:100px;
     text-align:center;
-    height:300px;
+    height:500px;
     border: 2px solid black; 
     }
     </style>
@@ -58,8 +58,9 @@ app.get("/", (c) => {
     <body>
     <div class="container">
     <h1>Welcome to Garden Delight Restaurant API BY Joyce </h1>
-    <p> Here you are able to retrieve information about restaurants menu_items and orders processing and shipping of the orders<p>
     <p>This is the restaurant Managhement System</p>
+    <p> Here you are able to retrieve information about restaurants menu_items and orders processing and shipping of the orders<p>
+    
     <h3></h3>
     </div>
     </body>
