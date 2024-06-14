@@ -33,8 +33,11 @@ app.get("/", (c) => {
     <style>
    body{
     font-size:2opx;
-    font-family:sans serif;
-    text-align:center; 
+    font-family:cursive;
+    align-items:center; 
+    display:flex;
+    justify-content:center
+
 
      }
 
@@ -44,10 +47,10 @@ app.get("/", (c) => {
     .container{
     border-radius:10px;
     margin-top:200px;
-    display:block;
     width:500px;
+    text-align:center
     height:300px;
-    justify-content:center
+    border: 2px solid 
     }
     </style>
     </head>
