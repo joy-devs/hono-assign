@@ -47,6 +47,7 @@ app.get("/", (c) => {
     display:block;
     width:500px;
     height:300px;
+    justify-content:center
     }
     </style>
     </head>
