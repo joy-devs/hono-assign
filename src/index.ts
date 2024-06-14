@@ -37,6 +37,8 @@ app.get("/", (c) => {
     text-align:center;
     border:1px solid blue; 
     border-radius:10px;
+    border-width:100px
+    
      }
     h1{
 
