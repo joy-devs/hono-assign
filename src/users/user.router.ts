@@ -2,14 +2,15 @@ import { Hono } from 'hono';
 import { listUsers, getUser, createUser, updateUser, deleteUser } from './user.controller';
 import { zValidator } from '@hono/zod-validator';
 import { userSchema } from '../validator';
+import { adminRoleAuth,bothRoleAuth } from '../middleware/bearAuth';
 
 export const userRouter = new Hono();
 
 // Get all users - api/users
-userRouter.get('/users', listUsers);
+userRouter.get('/users', adminRoleAuth,listUsers);
 
 // Get a single user - api/users/:id
-userRouter.get('/users/:id', getUser);
+userRouter.get('/users/:id',bothRoleAuth, getUser);
 
 // Create a user
 userRouter.post(
@@ -34,4 +35,4 @@ userRouter.put(
 );
 
 // Delete a user - api/users/:id
-userRouter.delete('/users/:id', deleteUser);
+userRouter.delete('/users/:id',adminRoleAuth,deleteUser);

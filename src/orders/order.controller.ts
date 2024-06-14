@@ -1,5 +1,5 @@
 import { Context } from 'hono';
-import { ordersService, getOrdersService, createOrdersService, updateOrdersService, deleteOrdersService } from './order.service';
+import { ordersService, getOrderService, createOrderService, updateOrderService, deleteOrderService } from './order.service';
 
 // List all orders
 export const listOrders = async (c: Context) => {
@@ -10,7 +10,7 @@ export const listOrders = async (c: Context) => {
 // Get a single order by ID
 export const getOrder = async (c: Context) => {
   const id = Number(c.req.param('id'));
-  const order = await getOrdersService(id);
+  const order = await getOrderService(id);
   if (order) {
     return c.json(order);
   } else {
@@ -21,7 +21,7 @@ export const getOrder = async (c: Context) => {
 // Create a new order
 export const createOrder = async (c: Context) => {
   const order = await c.req.json();
-  const message = await createOrdersService(order);
+  const message = await createOrderService(order);
   return c.json({ message }, 201);
 };
 
@@ -29,13 +29,13 @@ export const createOrder = async (c: Context) => {
 export const updateOrder = async (c: Context) => {
   const id = Number(c.req.param('id'));
   const order = await c.req.json();
-  const message = await updateOrdersService(id, order);
+  const message = await updateOrderService(id, order);
   return c.json({ message });
 };
 
 // Delete an order
 export const deleteOrder = async (c: Context) => {
   const id = Number(c.req.param('id'));
-  const message = await deleteOrdersService(id);
+  const message = await deleteOrderService(id);
   return c.json({ message });
 };

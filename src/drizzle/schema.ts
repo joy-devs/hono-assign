@@ -1,4 +1,4 @@
-import { pgTable, serial, text, integer, varchar, timestamp, foreignKey } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, integer, varchar, timestamp, foreignKey, pgEnum } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // State Table
@@ -87,6 +87,23 @@ export const UserRelations = relations(User, ({ one, many }) => ({
     references: [Address.id],
   }),
   comments: many(Comment),
+}));
+
+export const roleEnum = pgEnum("role", ["admin", "user"])
+
+export const AuthonUser = pgTable("auth_on_users", {
+  id: serial('id').primaryKey(),
+  userId:integer("user_id").notNull().references(() => User.id, { onDelete :"cascade"}),
+  password:varchar("password", {length:100}),
+  username:varchar("username", {length:100}),
+  role: roleEnum("role").default("user")
+});
+ 
+export const AuthonUserRelations = relations(AuthonUser, ({one}) => ({
+  user: one(User, {
+    fields:[AuthonUser.userId],
+    references : [User.id]
+  })
 }));
 
 // RestaurantOwner Table
@@ -304,6 +321,6 @@ export type TSStatusCatalog = typeof StatusCatalog.$inferSelect;
 export type TIOrderStatusRelation = typeof OrderStatusRelation.$inferInsert;
 export type TSOrderStatusRelation = typeof OrderStatusRelation.$inferSelect;
 
-// // Driver
-// export type TIDriver = typeof Driver.$inferInsert;
-// export type TSDriver = typeof Driver.$inferSelect;
+// AuthonUser
+export type TIAuthonUser = typeof AuthonUser.$inferInsert;
+export type TSAuthonUser= typeof AuthonUser.$inferSelect;

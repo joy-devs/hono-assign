@@ -8,6 +8,13 @@
       "when": 1718220229389,
       "tag": "0000_fearless_sinister_six",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1718265323123,
+      "tag": "0001_careless_mister_sinister",
+      "breakpoints": true
     }
   ]
 }

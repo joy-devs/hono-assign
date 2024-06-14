@@ -15,6 +15,7 @@ import { orderMenuItemRouter } from './ordermenuitems/ordermenuitem.router';
 import { commentRouter } from './comments/comment.router';
 import { statusCatalogRouter } from './statuscatalogs/statuscatalog.router';
 import { orderstatusrelationRouter } from './orderstatusrelations/orderstatusrelation.router';
+import { authRouter } from './auth/auth.router';
 
 
 
@@ -41,6 +42,8 @@ app.route("/api", orderMenuItemRouter)
 app.route("/api", commentRouter)
 app.route("/api", statusCatalogRouter)
 app.route("/api", orderstatusrelationRouter)
+app.route("/api", authRouter)
+
 
 
 

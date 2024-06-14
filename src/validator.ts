@@ -3,7 +3,7 @@ import { City } from './drizzle/schema'
 import { boolean } from 'drizzle-orm/mysql-core'
 export const userSchema = z.object({
 
-    id:z.string(),
+  id:z.string(),
   name:z.string(),
   contact_phone: z.string(),
   personal_email: z.string(),
@@ -12,6 +12,20 @@ export const userSchema = z.object({
   address_id: z.number()
 
 })
+
+export const loginUserSchema = z.object({
+  username: z.string(),
+  password:z.string()
+})
+
+export const registerUserSchema = z. object({
+  userId:z. number(),
+  password: z.string(),
+  username:z.string(),
+  role:z.string().optional()
+})
+
+
 export const stateSchema = z.object({
     id:z. number(),
     name: z.string(),

@@ -2,11 +2,10 @@ GET http://localhost:8000/
 ###
 
 GET http://localhost:8000/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb3kiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTM0NTJ9.PO7fnooc93FF8J9ErT25LqNliKTyhMVHb9W04UQFAQo
 ###
-
-GET http://localhost:8000/api/users/2
-
-//list states
+GET http://localhost:8000/api/users/3
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb3kiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUyODB9.oAdO9HUGqGcku2dddz_bO-IbiNMbpogrqcCv74gEn3o
 ###
 GET http://localhost:8000/api/state
 
@@ -68,6 +67,7 @@ Content-Type: application/json
  }
 
 ###
+//list restaurants
 GET http://localhost:8000/api/restaurants
 ###
 
@@ -96,7 +96,7 @@ DELETE http://localhost:8000/api/owners/6
 GET http://localhost:8000/api/categories
 ###
 
-
+//creating a new category
 POST http://localhost:8000/api/categories
 Content-Type: application/json
 
@@ -107,11 +107,13 @@ Content-Type: application/json
       
 }
 ###
+//deleting a category
 DELETE http://localhost:8000/api/categories/7
 
 ###
 GET http://localhost:8000/api/menuitems
 ###
+//creating a new menuItem
 POST http://localhost:8000/api/menuitems
 Content-Type: application/json
 
@@ -126,8 +128,10 @@ Content-Type: application/json
 }
 
 ###
+//list all orderstatuses
 GET http://localhost:8000/api/orderstatuses
 ###
+//create a new order status
 POST http://localhost:8000/api/orderstatuses
 Content-Type: application/json
 
@@ -136,22 +140,65 @@ Content-Type: application/json
     "status": "arrival"
  }
 ###
-
+//delete an orderstatus
 DELETE http://localhost:8000/api/orderstatuses/7
 
 ###
+//list orders
 GET http://localhost:8000/api/orders
 
 ###
+//list ordermenuitems
 GET http://localhost:8000/api/ordermenuitems
 ###
+
+//list all comments
 GET http://localhost:8000/api/comments
 ###
+//list statuscatalogs
 GET http://localhost:8000/api/statuscatalogs
 ###
+//list orderstatusrelations
 GET http://localhost:8000/api/orderstatusrelations
+###
 
+GET http://localhost:8000/api/auth 
+###
+POST http://localhost:8000/api/register
+Content-Type: application/json
 
+{
+"userId":2,
+"username":"joy" ,
+"password":"pass",
+"role":"admin"
+}
+###
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "username":"joy" ,
+    "password":"pass"
+}
+###
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+"userId":3,
+"username":"peter" ,
+"password":"pass",
+"role":"user"
+}
+###
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "username":"peter" ,
+    "password":"pass"
+}
 
 
 
