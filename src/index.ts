@@ -49,8 +49,10 @@ app.get("/", (c) => {
     margin-top:50px;
     min-width:100px;
     text-align:center;
-    height:500px;
-    border: 2px solid black; 
+    height:200px;
+    border: 2px solid black;
+    padding:15px;
+
     }
     </style>
     </head>
