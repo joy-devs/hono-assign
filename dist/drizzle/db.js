@@ -23,24 +23,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.client = void 0;
-require("dotenv/config");
-const node_postgres_1 = require("drizzle-orm/node-postgres");
-const pg_1 = require("pg");
+exports.db = exports.client = void 0;
+const neon_http_1 = require("drizzle-orm/neon-http");
+const serverless_1 = require("@neondatabase/serverless");
+const dotenv_1 = require("dotenv");
 const schema = __importStar(require("./schema"));
-exports.client = new pg_1.Client({
-    connectionString: process.env.DATABASE_URL,
-});
-const main = async () => {
-    try {
-        await exports.client.connect();
-        console.log("Connected to the database");
-    }
-    catch (error) {
-        console.error("Error connecting to the database:", error);
-        process.exit(1);
-    }
-};
-main();
-const db = (0, node_postgres_1.drizzle)(exports.client, { schema, logger: true });
-exports.default = db;
+(0, dotenv_1.config)({ path: ".env" });
+exports.client = (0, serverless_1.neon)(process.env.DATABASE_URL);
+exports.db = (0, neon_http_1.drizzle)(exports.client, { schema, logger: true });
+exports.default = exports.db;

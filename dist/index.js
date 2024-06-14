@@ -18,10 +18,22 @@ const comment_router_1 = require("./comments/comment.router");
 const statuscatalog_router_1 = require("./statuscatalogs/statuscatalog.router");
 const orderstatusrelation_router_1 = require("./orderstatusrelations/orderstatusrelation.router");
 const auth_router_1 = require("./auth/auth.router");
+const html_1 = require("hono/html");
 const app = new hono_1.Hono();
 //default route
-app.get('/ok', (c) => {
-    return c.text('the code is okay ');
+app.get("/", (c) => {
+    return c.html((0, html_1.html) `<DOCTYPE html>
+    <html> 
+    <head>
+    <title>Restaurant API</title>
+    </head>
+
+    <body>
+    <h1>Welcome to Quick Eats Restaurant BY Joyce</h1>
+    <p>We offer delicious meals<p>
+    </body>
+    </html>
+   `);
 });
 //custom route
 app.route("/api", user_router_1.userRouter); // /users
