@@ -34,10 +34,9 @@ app.get("/", (c) => {
    body{
     font-size:2opx;
     font-family:sans serif;
-    text-align:center;
-    border:1px solid blue; 
-    border-radius:10px;
-    border-width:100px
+    text-align:center; 
+    // border-radius:10px;
+    // border-width:100px
     
      }
     h1{
