@@ -16,6 +16,8 @@ import { commentRouter } from './comments/comment.router';
 import { statusCatalogRouter } from './statuscatalogs/statuscatalog.router';
 import { orderstatusrelationRouter } from './orderstatusrelations/orderstatusrelation.router';
 import { authRouter } from './auth/auth.router';
+import { Restaurant } from './drizzle/schema'
+import {html} from 'hono/html'
 
 
 
@@ -23,9 +25,20 @@ import { authRouter } from './auth/auth.router';
 const app = new Hono()
 
 //default route
-app.get('/ok', (c) => {
-  return c.text('the code is okay ')
-})
+app.get('/', (c) => {
+  return c.html(html`<DOCTYPE html>
+    <html> 
+    <head>
+    <title>Restaurant API</title>
+    </head>
+
+    <body>
+    <h1>Welcome to Quick Eats Restaurant BY Joyce</h1>
+    <p>We offer delicious meals<p>
+    </body>
+    </html>
+   `);
+});
 
 //custom route
 app.route("/api", userRouter) // /users
