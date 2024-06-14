@@ -36,7 +36,7 @@ app.get("/", (c) => {
     font-family:cursive;
     align-items:center; 
     display:flex;
-    justify-content:center
+    justify-content:center;
 
 
      }
@@ -48,9 +48,9 @@ app.get("/", (c) => {
     border-radius:10px;
     margin-top:200px;
     width:500px;
-    text-align:center
+    text-align:center;
     height:300px;
-    border: 2px solid 
+    border: 2px solid black; 
     }
     </style>
     </head>
