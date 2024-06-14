@@ -35,21 +35,29 @@ app.get("/", (c) => {
     font-size:2opx;
     font-family:sans serif;
     text-align:center; 
-    // border-radius:10px;
-    // border-width:100px
-    
+
      }
+
     h1{
 
+    }
+    .container{
+    border-radius:10px;
+    margin-top:200px;
+    display:block;
+    width:500px;
+    height:300px;
     }
     </style>
     </head>
 
     <body>
+    <div class="container">
     <h1>Welcome to Garden Delight Restaurant BY Joyce 🍽️</h1>
     <p>We offer delicious meals<p>
-    <p>The taste that make you feel awesome👌</p>
+    <p>The taste that makes you feel awesome👌</p>
     <h3>It's not just food it's an experience😊</p>
+    </div>
     </body>
     </html>
    `);
